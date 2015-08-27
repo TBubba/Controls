@@ -145,3 +145,13 @@ if (type == C_TYPE.MOUSE)
     else if (control == mb_right)
         return "mb_right";
 }
+
+// Mouse
+if (type == C_TYPE.MOUSE_WHEEL)
+{
+    // Get control
+    if (control == mw_up)
+        return "mw_up";
+    else if (control == mw_down)
+        return "mw_down";
+}

@@ -51,6 +51,8 @@ controls_create("shift", "vk_shift");
 controls_create("lmb", "mb_left");
 controls_create("rmb", "mb_right");
 controls_create("mmb", "mb_middle");
+controls_create("mw_up", "mw_up");
+controls_create("mw_down", "mw_down");
 controls_create("random", "vk_space");
 </string>
           </argument>

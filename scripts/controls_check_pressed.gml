@@ -14,11 +14,7 @@ if ((type == noone) || (control == noone)) return noone;
 
 // Check control
 var pressed;
-if (type == C_TYPE.MOUSE)
-{
-    pressed = mouse_check_button_pressed(control);
-}
-else if (type == C_TYPE.KEYBOARD)
+if (type == C_TYPE.KEYBOARD)
 {
     pressed = keyboard_check_pressed(control);
 }
@@ -48,6 +44,21 @@ else if (type == C_TYPE.KEYBOARD_DIRECT)
     }
     else pressed = false;
     */
+}
+else if (type == C_TYPE.MOUSE)
+{
+    pressed = mouse_check_button_pressed(control);
+}
+else if (type == C_TYPE.MOUSE_WHEEL)
+{
+    var p;
+    if (control == mw_up) p = controls_buffer_mw_up;
+    if (control == mw_down) p = controls_buffer_mw_down;
+    
+    if (p == C_STATE.PRESSED)
+        pressed = true;
+    else
+        pressed = false;
 }
 
 // Return

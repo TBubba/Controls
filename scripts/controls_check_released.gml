@@ -14,11 +14,7 @@ if ((type == noone) || (control == noone)) return noone;
 
 // Check control
 var released;
-if (type == C_TYPE.MOUSE)
-{
-    released = mouse_check_button_released(control);
-}
-else if (type == C_TYPE.KEYBOARD)
+if (type == C_TYPE.KEYBOARD)
 {
     released = keyboard_check_released(control);
 }
@@ -36,18 +32,21 @@ else if (type == C_TYPE.KEYBOARD_DIRECT)
         released = true;
     else
         released = false;
+}
+else if (type == C_TYPE.MOUSE)
+{
+    released = mouse_check_button_released(control);
+}
+else if (type == C_TYPE.MOUSE_WHEEL)
+{
+    var r;
+    if (control == mw_up) r = controls_buffer_mw_up;
+    if (control == mw_down) r = controls_buffer_mw_down;
     
-    /*
-    if (!keyboard_check_direct(control)) // Check if control is up
-    {
-        var vk;
-        if ((control == vk_lalt) || (control == vk_ralt)) vk = vk_alt;
-        if ((control == vk_lcontrol) || (control == vk_rcontrol)) vk = vk_control;
-        if ((control == vk_lshift) || (control == vk_rshift)) vk = vk_shift;
-        released = keyboard_check_released(vk); // Check if left/right of conctrol is released
-    }
-    else released = false;
-    */
+    if (r == C_STATE.RELEASED)
+        released = true;
+    else
+        released = false;
 }
 
 // Return

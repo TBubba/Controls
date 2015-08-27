@@ -17,28 +17,6 @@ if (string_length(control) == 1)
     return ret;
 }
 
-// Mouse
-if (string_copy(control, 0, 3) == "mb_")
-{
-    // Set type as mouse
-    ret[1] = C_TYPE.MOUSE;
-    
-    // Get control
-    if (control == "mb_any")
-        ret[0] = mb_any;
-    else if (control == "mb_none")
-        ret[0] = mb_none;
-    else if (control == "mb_left")
-        ret[0] = mb_left;
-    else if (control == "mb_middle")
-        ret[0] = mb_middle;
-    else if (control == "mb_right")
-        ret[0] = mb_right;
-        
-    // Return
-    return ret;
-}
-
 // Keyboard
 if (string_copy(control, 0, 3) == "vk_")
 {
@@ -165,6 +143,44 @@ if (string_copy(control, 0, 3) == "vk_")
         ret[0] = vk_subtract;
     else if (control == "vk_decimal")
         ret[0] = vk_decimal;
+        
+    // Return
+    return ret;
+}
+
+// Mouse
+if (string_copy(control, 0, 3) == "mb_")
+{
+    // Set type as mouse
+    ret[1] = C_TYPE.MOUSE;
+    
+    // Get control
+    if (control == "mb_any")
+        ret[0] = mb_any;
+    else if (control == "mb_none")
+        ret[0] = mb_none;
+    else if (control == "mb_left")
+        ret[0] = mb_left;
+    else if (control == "mb_middle")
+        ret[0] = mb_middle;
+    else if (control == "mb_right")
+        ret[0] = mb_right;
+        
+    // Return
+    return ret;
+}
+
+// MouseWheel
+if (string_copy(control, 0, 3) == "mw_")
+{
+    // Set type as mouse
+    ret[1] = C_TYPE.MOUSE_WHEEL;
+    
+    // Get control
+    if (control == "mw_up")
+        ret[0] = mw_up;
+    else if (control == "mw_down")
+        ret[0] = mw_down;
         
     // Return
     return ret;

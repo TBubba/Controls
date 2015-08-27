@@ -11,7 +11,18 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="control">
+    <scripts name="control_main">
+      <scripts name="buffer">
+        <script>scripts\controls_buffer_update.gml</script>
+      </scripts>
+      <scripts name="check">
+        <script>scripts\controls_check.gml</script>
+        <script>scripts\controls_check_name.gml</script>
+        <script>scripts\controls_check_pressed.gml</script>
+        <script>scripts\controls_check_pressed_name.gml</script>
+        <script>scripts\controls_check_released.gml</script>
+        <script>scripts\controls_check_released_name.gml</script>
+      </scripts>
       <scripts name="find">
         <script>scripts\controls_find_id.gml</script>
       </scripts>
@@ -21,6 +32,10 @@
         <script>scripts\controls_get_control.gml</script>
         <script>scripts\controls_get_control_name.gml</script>
       </scripts>
+      <scripts name="parse">
+        <script>scripts\controls_parse.gml</script>
+        <script>scripts\controls_parse_reverse.gml</script>
+      </scripts>
       <scripts name="set">
         <script>scripts\controls_set_name.gml</script>
         <script>scripts\controls_set_control.gml</script>
@@ -28,19 +43,8 @@
       <scripts name="state">
         <script>scripts\controls_state_update.gml</script>
       </scripts>
-      <scripts name="buffer">
-        <script>scripts\controls_buffer_update.gml</script>
-      </scripts>
       <script>scripts\controls_init.gml</script>
       <script>scripts\controls_create.gml</script>
-      <script>scripts\controls_parse.gml</script>
-      <script>scripts\controls_parse_reverse.gml</script>
-      <script>scripts\controls_check.gml</script>
-      <script>scripts\controls_check_name.gml</script>
-      <script>scripts\controls_check_pressed.gml</script>
-      <script>scripts\controls_check_pressed_name.gml</script>
-      <script>scripts\controls_check_released.gml</script>
-      <script>scripts\controls_check_released_name.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
